@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ATS Score</title>
+<style>
+body{
+    background:url("/static/bg.jpeg") no-repeat center center fixed;
+    background-size:cover;
+    font-family:Segoe UI;
+}
+.box{
+    width:420px;
+    margin:80px auto;
+    background:rgba(0,0,0,0.6);
+    padding:30px;
+    border-radius:15px;
+    color:white;
+}
+input,textarea,button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+    border:none;
+}
+button{background:#00c6ff;}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h2>ATS Score Checker</h2>
+
+<form method="post" enctype="multipart/form-data">
+<textarea name="jd" placeholder="Job Description" required></textarea>
+<input type="file" name="resume" required>
+<button>Analyze</button>
+</form>
+
+{% if score %}
+<hr>
+<p><b>ATS Score:</b> {{ score }}%</p>
+<p><b>Skills Found:</b> {{ skills }}</p>
+<p><b>Experience:</b> {{ exp }} years</p>
+{% endif %}
+</div>
+</body>
+</html>

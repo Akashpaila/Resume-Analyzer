@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Role Prediction</title>
+<style>
+body{
+    background:url("/static/bg.jpeg") no-repeat center center fixed;
+    background-size:cover;
+    font-family:Segoe UI;
+}
+.box{
+    width:420px;
+    margin:80px auto;
+    background:rgba(0,0,0,0.6);
+    padding:30px;
+    border-radius:15px;
+    color:white;
+}
+input,button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+    border:none;
+}
+button{background:#00c6ff;}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h2>Role Prediction</h2>
+
+<form method="post" enctype="multipart/form-data">
+<input type="file" name="resume" required>
+<button>Predict Role</button>
+</form>
+
+{% if roles %}
+<hr>
+<h3>Recommended Roles</h3>
+{% for r in roles %}
+<p>{{ r }}</p>
+{% endfor %}
+{% endif %}
+</div>
+</body>
+</html>

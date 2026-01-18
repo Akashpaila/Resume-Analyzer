@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Resume Analyzer</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:url("/static/bg.jpeg") no-repeat center center fixed;
+    background-size:cover;
+    color:white;
+}
+
+.overlay{
+    min-height:100vh;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+h1{
+    font-size:3em;
+    margin-bottom:10px;
+}
+
+p{
+    opacity:0.9;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:flex;
+    gap:30px;
+}
+
+.card{
+    width:260px;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,0.2);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+<div class="overlay">
+    <h1>AI Resume Analyzer</h1>
+    <p>Smart ATS Scoring • Resume Ranking • Role Prediction</p>
+
+    <div class="cards">
+        <div class="card" onclick="location.href='/rank'">
+            <h3>📄 Rank Resumes</h3>
+            <p>Match resumes with job description</p>
+        </div>
+
+        <div class="card" onclick="location.href='/ats'">
+            <h3>📊 ATS Score</h3>
+            <p>Check ATS score & keywords</p>
+        </div>
+
+        <div class="card" onclick="location.href='/role'">
+            <h3>🎯 Role Prediction</h3>
+            <p>Find best roles for resume</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
